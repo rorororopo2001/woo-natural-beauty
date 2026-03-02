@@ -268,8 +268,17 @@
   transition: opacity 0.3s, transform 0.3s var(--ease-out-expo);
   box-shadow: 0 12px 40px rgba(61,46,31,0.08);
   z-index: 100;
-  /* 用 padding-top 取代 gap，確保 hover 不中斷 */
-  padding-top: 16px;
+  margin-top: 16px;
+}
+
+/* 橋接空隙，讓滑鼠移動時不會離開 hover 區域 */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
 }
 .nav-dropdown:hover .nav-dropdown-menu {
   opacity: 1;
