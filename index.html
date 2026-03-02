@@ -1312,28 +1312,6 @@
       .why-item { padding: 32px 24px; }
     }
 
-    :root {
-      --cream: #FAF7F2;
-      --warm-white: #FFFDF9;
-      --sand: #E8DFD3;
-      --clay: #C4AD93;
-      --bark: #8C7561;
-      --espresso: #3D2E1F;
-      --gold: #B8965A;
-      --gold-light: #D4B87C;
-      --blush: #D4A89A;
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body-zh: 'Noto Serif TC', serif;
-      --font-body-en: 'Jost', sans-serif;
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: var(--font-body-zh);
-      background: var(--cream);
-      color: var(--espresso);
-      -webkit-font-smoothing: antialiased;
-    }
     /* ===== PRICING SECTION ===== */
     .pricing {
       padding: 120px 0 100px;
@@ -1357,41 +1335,6 @@
       border: 1px solid rgba(196,173,147,0.15);
       border-radius: 50%;
       pointer-events: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 60px);
-    }
-
-    /* Section Header */
-    .section-header {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .section-header .tag {
-      font-family: var(--font-body-en);
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-      font-weight: 500;
-      display: block;
-    }
-    .section-header h2 {
-      font-family: var(--font-body-zh);
-      font-weight: 300;
-      font-size: clamp(26px, 3.2vw, 40px);
-      letter-spacing: 2px;
-      margin-bottom: 16px;
-    }
-    .section-header p {
-      font-size: 15px;
-      color: var(--bark);
-      font-weight: 300;
-      line-height: 1.9;
     }
 
     /* Tab Navigation */
@@ -1763,14 +1706,6 @@
     }
     .btn-primary:hover { background: var(--gold); }
 
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
     /* Responsive */
     @media (max-width: 900px) {
       .pmu-grid { grid-template-columns: 1fr; }
@@ -1944,6 +1879,7 @@
           <h3>霧眉 + 飄眉</h3>
           <div class="service-en">Combo Brows</div>
           <p>結合霧眉的柔和底色與飄眉的仿真毛流，兼具自然感與輪廓感。打造層次分明、立體又柔美的完美眉型。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -2429,11 +2365,8 @@
     });
   });
 
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Reveal on scroll - handled below
+  </script>
   <script>
     // Scroll Reveal
     const observer = new IntersectionObserver((entries) => {
