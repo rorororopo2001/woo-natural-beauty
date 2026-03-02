@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rorororopo2001.github.io/woo-natural-beauty/sitemap.xml
