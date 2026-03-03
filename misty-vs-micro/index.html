@@ -62,7 +62,11 @@
       --font-body-en: 'Jost', sans-serif;
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     }
-
+    /* 防止文字溢出 */
+*, *::before, *::after {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -90,10 +94,12 @@
     }
 
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 60px);
-    }
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+  width: 100%; /* 確保寬度跟隨視窗 */
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+}
 
     /* ===== Nav ===== */
     nav {
@@ -300,12 +306,14 @@
     }
 
     .article-content p {
-      font-size: 15px;
-      line-height: 2.1;
-      color: var(--bark);
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
+  font-size: 15px;
+  line-height: 2.1;
+  color: var(--bark);
+  font-weight: 300;
+  margin-bottom: 16px;
+  overflow-wrap: break-word; /* 新增 */
+  word-break: break-word;    /* 新增 */
+}
     .article-content p:last-child { margin-bottom: 0; }
 
     .article-content strong {
@@ -368,11 +376,11 @@
       font-weight: 300;
     }
     .definition-card-icon {
-      position: absolute;
-      top: 28px;
-      right: 28px;
-      font-family: var(--font-display);
-      font-size: 64px;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  font-family: var(--font-display), 'Noto Serif TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+  font-size: 64px;
       font-weight: 300;
       color: rgba(184,150,90,0.1);
       line-height: 1;
@@ -757,22 +765,102 @@
     }
 
     /* ===== Responsive ===== */
-    @media (max-width: 900px) {
-      .article-body .container {
-        grid-template-columns: 1fr;
-      }
-      .article-sidebar { position: static; }
-      .sidebar-toc { display: none; }
-      .definition-grid { grid-template-columns: 1fr; gap: 12px; }
-      .suitability-grid { grid-template-columns: 1fr; }
-      .comparison-wrap { overflow-x: auto; }
-      .comparison-table { min-width: 480px; }
-    }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
-    @media (max-width: 580px) {
-      .combo-section { padding: 32px 24px; }
-      .article-cta { padding: 36px 24px; }
-    }
+/* 尋找並修改這段代碼 */
+@media (max-width: 900px) {
+  .article-body .container {
+    /* 修正：強制 Grid 不要被內部的 480px 表格撐開 */
+    grid-template-columns: minmax(0, 1fr); 
+    
+    /* 或者更保險的做法是直接改回 block */
+    display: block; 
+  }
+
+  /* 確保表格容器寬度受到限制 */
+  .comparison-wrap {
+    width: 100%;
+    max-width: 100%; /* 強制不超過父層 */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+  /* 2. 修改表格設定 */
+  .comparison-table {
+    min-width: 480px; /* 保留最小寬度，讓表格在小螢幕時可以左右滑動看內容 */
+    width: 100%;      /* 但基準寬度應為 100% */
+  }
+}
+
+  /* 修正：裝飾大字不溢出 */
+  .definition-card-icon {
+    display: none;
+  }
+
+  /* 修正：各區塊不超出 */
+  .combo-section,
+  .article-cta,
+  .sidebar-cta,
+  .sidebar-links {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+  .nav-logo {
+    letter-spacing: 1px; /* 縮小字距防止推擠 */
+    font-size: 14px;
+  }
+  .nav-back {
+    font-size: 10px;
+  }
+  
+  /* 確保 container 在小螢幕不會有負擔 */
+  .container {
+    padding: 0 15px; 
+    overflow: hidden; /* 防止內容溢出 */
+  }
+  .combo-section { padding: 32px 20px; }
+  .article-cta { padding: 36px 20px; }
+
+  /* 修正：hero accent 縮小避免撐寬 */
+  .page-hero-accent {
+    width: 200px;
+    height: 200px;
+    right: 0;
+    top: 0;
+  }
+
+  /* 修正：lead block 不超出 */
+  .page-hero-lead {
+  /* 原有屬性不變，加這兩行 */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+  /* 修正：suitability card 右側不被切 */
+  .suitability-card {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* 修正：footer 置中對齊 */
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
   </style>
 </head>
 
@@ -840,14 +928,14 @@
 
           <div class="definition-grid">
             <div class="definition-card misty">
-              <div class="definition-card-icon">雾</div>
+              <div class="definition-card-icon">霧</div>
               <div class="definition-card-label">Misty Powder Brows</div>
               <h3>霧眉</h3>
               <div class="en-name">Powder / Ombre Brows</div>
               <p>柔和霧感，如刷眉粉。適合想要每天省去畫眉步驟、保有輕妝效果的你。</p>
             </div>
             <div class="definition-card micro">
-              <div class="definition-card-icon">飘</div>
+              <div class="definition-card-icon">飄</div>
               <div class="definition-card-label">Microblading</div>
               <h3>飄眉</h3>
               <div class="en-name">Microblading / Hair Stroke</div>
