@@ -404,11 +404,13 @@
     }
 
     .technique-card {
-      padding: 36px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s var(--ease-out-expo);
-    }
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+}
     .technique-card.primary {
       background: linear-gradient(135deg, var(--espresso) 0%, #2E2216 100%);
     }
@@ -456,11 +458,12 @@
     .technique-card.tertiary .en-name { color: var(--bark); }
 
     .technique-card p {
-      font-size: 13px;
-      line-height: 1.9;
-      font-weight: 300;
-      margin: 0;
-    }
+  font-size: 13px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin: 0;
+  flex: 1;
+}
     .technique-card.primary p { color: var(--clay); }
     .technique-card.secondary p,
     .technique-card.tertiary p { color: var(--bark); }
