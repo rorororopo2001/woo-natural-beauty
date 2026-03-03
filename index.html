@@ -769,13 +769,16 @@
     }
 
     .service-card {
-      background: var(--cream);
-      padding: 52px 40px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.5s var(--ease-out-expo);
-      cursor: default;
-    }
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  padding: 52px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s var(--ease-out-expo);
+  cursor: default;
+  height: 100%; /* 確保同排卡片等高 */
+}
     .service-card::before {
       content: '';
       position: absolute;
@@ -818,21 +821,60 @@
       margin-bottom: 20px;
     }
     .service-card p {
-      font-size: 14px;
-      color: var(--bark);
-      line-height: 1.9;
-      font-weight: 300;
-    }
+  font-size: 14px;
+  color: var(--bark);
+  line-height: 1.9;
+  font-weight: 300;
+  flex-grow: 1; 
+  margin-bottom: 30px; /* 與底部對齊區塊保持間距 */
+}
+
+/* 底部對齊容器：關鍵區塊 */
+.service-footer {
+  display: flex;
+  align-items: flex-end; /* 重要：強制所有元素底部對齊 */
+  gap: 15px;
+  line-height: 1.2; /* 縮減行高以減少文字下方的預留空間 */
+}
+
+/* 2. 統一底部連結容器 */
+.service-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto; /* 強制貼齊卡片底部 */
+}
+
+/* 3. 統一連結字體與樣式 */
+.service-more-link {
+  font-family: var(--font-body-zh); /* 統一使用中文字體 */
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px; /* 調整文字與底線的距離 */
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.service-more-link:hover {
+  color: var(--espresso);
+  border-color: var(--espresso);
+}
 
     .service-tag {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 11px;
-      letter-spacing: 1px;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 5px 14px;
-    }
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 5px 14px;
+  margin: 0; /* 移除外邊距，確保外框底部即為元素邊界 */
+}
 
 
     /* ===== Portfolio Gallery ===== */
@@ -1880,34 +1922,38 @@
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-number">01</div>
-          <h3>機器飄眉</h3>
-          <div class="service-en">Microblading</div>
-          <p>以精細的毛流線條模擬真實眉毛生長方向，打造仿若天生的立體眉型。適合眉毛稀疏、想要自然毛流感的你。</p>
-          <div style="display:flex;gap:10px;align-items:center;margin-top:20px;flex-wrap:wrap;">
-  <span class="service-tag">型男必選</span>
-  <a href="men-brow-guide/" style="font-size:11px;letter-spacing:1px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:all 0.3s;font-family:var(--font-body-zh);">男士紋眉指南 →</a>
+  <div class="service-number">01</div>
+  <h3>機器飄眉</h3>
+  <div class="service-en">Microblading</div>
+  <p>以精細的毛流線條模擬真實眉毛生長方向，打造仿若天生的立體眉型。適合眉毛稀疏、想要自然毛流感的你。</p>
+  <div class="service-footer">
+    <span class="service-tag">型男必選</span>
+    <a href="men-brow-guide/" class="service-more-link">男士紋眉指南 →</a>
+  </div>
+</div>        
+
+<div class="service-card reveal">
+  <div class="service-number">02</div>
+  <h3>機器掃霧眉</h3>
+  <div class="service-en">Misty Powder Brows</div>
+  <p>以輕柔的霧化技法，打造如同眉粉暈染般的柔和效果。適合喜歡溫柔妝感、追求自然乾淨眉型的你。</p>
+  <div class="service-footer">
+    <span class="service-tag">人氣首選</span>
+    <a href="misty-vs-micro/" class="service-more-link">
+      霧眉 vs 飄眉比較
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
-        </div>        
-        <div class="service-card reveal">
-          <div class="service-number">02</div>
-          <h3>機器掃霧眉</h3>
-          <div class="service-en">Misty Powder Brows</div>
-          <p>以輕柔的霧化技法，打造如同眉粉暈染般的柔和效果。適合喜歡溫柔妝感、追求自然乾淨眉型的你。</p>
-          <span class="service-tag">人氣首選</span>
-          <a href="misty-vs-micro/" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--font-body-en);font-size:11px;letter-spacing:2px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:3px;transition:all 0.3s;">
-            霧眉 vs 飄眉比較
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-number">03</div>
-          <h3>霧眉 + 飄眉</h3>
-          <div class="service-en">Combo Brows</div>
-          <p>結合霧眉的柔和底色與飄眉的仿真毛流，兼具自然感與輪廓感。打造層次分明、立體又柔美的完美眉型。</p>
-        </div>
-      </div>
+
+<div class="service-card reveal">
+  <div class="service-number">03</div>
+  <h3>霧眉 + 飄眉</h3>
+  <div class="service-en">Combo Brows</div>
+  <p>結合霧眉的柔和底色與飄眉的仿真毛流，兼具自然感與輪廓感。打造層次分明、立體又柔美的完美眉型。</p>
+  <div class="service-footer">
     </div>
+</div>
   </section>
 
 

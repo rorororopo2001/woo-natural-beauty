@@ -462,20 +462,20 @@
   line-height: 1.9;
   font-weight: 300;
   margin: 0;
-  flex: 1;
 }
     .technique-card.primary p { color: var(--clay); }
     .technique-card.secondary p,
     .technique-card.tertiary p { color: var(--bark); }
 
     .technique-badge {
-      display: inline-block;
-      margin-top: 16px;
-      font-size: 10px;
-      letter-spacing: 1px;
-      padding: 4px 12px;
-      font-family: var(--font-body-zh);
-    }
+  display: inline-block;
+  margin-top: auto;
+  padding: 4px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-family: var(--font-body-zh);
+  align-self: flex-start;
+}
     .technique-card.primary .technique-badge {
       color: var(--gold-light);
       border: 1px solid rgba(184,150,90,0.4);
@@ -857,6 +857,7 @@
       padding: 10px 0;
       border-bottom: 1px solid var(--sand);
       font-size: 13px;
+      font-family: var(--font-body-zh);
       color: var(--bark);
       transition: color 0.2s;
     }
