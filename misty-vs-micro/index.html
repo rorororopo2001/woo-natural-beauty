@@ -252,6 +252,8 @@
       color: var(--bark);
       font-weight: 300;
       max-width: 600px;
+      overflow-wrap: break-word;
+word-break: break-word;
       padding: 24px 28px;
       border-left: 2px solid var(--gold);
       background: rgba(255,255,255,0.5);
@@ -379,7 +381,7 @@
   position: absolute;
   top: 28px;
   right: 28px;
-  font-family: var(--font-display), 'Noto Serif TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+  font-family: var(--font-display), 'Noto Serif TC', 'PingFang TC', serif;
   font-size: 64px;
       font-weight: 300;
       color: rgba(184,150,90,0.1);
@@ -764,102 +766,48 @@
       letter-spacing: 1px;
     }
 
-    /* ===== Responsive ===== */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* 尋找並修改這段代碼 */
+/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .article-body .container {
-    /* 修正：強制 Grid 不要被內部的 480px 表格撐開 */
-    grid-template-columns: minmax(0, 1fr); 
-    
-    /* 或者更保險的做法是直接改回 block */
-    display: block; 
+    grid-template-columns: 1fr;
   }
+  .article-sidebar { position: static; }
+  .sidebar-toc { display: none; }
+  .definition-grid { grid-template-columns: 1fr; gap: 12px; }
+  .suitability-grid { grid-template-columns: 1fr; }
 
-  /* 確保表格容器寬度受到限制 */
-  .comparison-wrap {
-    width: 100%;
-    max-width: 100%; /* 強制不超過父層 */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-  /* 2. 修改表格設定 */
+  /* 表格：手機版自適應，不需橫滑 */
+  .comparison-wrap { overflow: visible; }
   .comparison-table {
-    min-width: 480px; /* 保留最小寬度，讓表格在小螢幕時可以左右滑動看內容 */
-    width: 100%;      /* 但基準寬度應為 100% */
-  }
-}
-
-  /* 修正：裝飾大字不溢出 */
-  .definition-card-icon {
-    display: none;
-  }
-
-  /* 修正：各區塊不超出 */
-  .combo-section,
-  .article-cta,
-  .sidebar-cta,
-  .sidebar-links {
-    box-sizing: border-box;
     width: 100%;
-    max-width: 100%;
+    table-layout: fixed; /* 三欄依比例分配，不撐寬 */
+  }
+  .comparison-table thead th,
+  .comparison-table tbody td {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+  /* 移除第一欄的 nowrap，讓文字可換行 */
+  .comparison-table tbody td:first-child {
+    white-space: normal;
+    width: 22%;
   }
 }
 
 @media (max-width: 580px) {
-  .nav-logo {
-    letter-spacing: 1px; /* 縮小字距防止推擠 */
-    font-size: 14px;
-  }
-  .nav-back {
-    font-size: 10px;
-  }
-  
-  /* 確保 container 在小螢幕不會有負擔 */
-  .container {
-    padding: 0 15px; 
-    overflow: hidden; /* 防止內容溢出 */
-  }
   .combo-section { padding: 32px 20px; }
   .article-cta { padding: 36px 20px; }
 
-  /* 修正：hero accent 縮小避免撐寬 */
-  .page-hero-accent {
-    width: 200px;
-    height: 200px;
-    right: 0;
-    top: 0;
-  }
+  /* 裝飾大字手機版隱藏，避免溢出與簡繁體問題 */
+  .definition-card-icon { display: none; }
 
-  /* 修正：lead block 不超出 */
-  .page-hero-lead {
-  /* 原有屬性不變，加這兩行 */
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-  /* 修正：suitability card 右側不被切 */
-  .suitability-card {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  /* 修正：footer 置中對齊 */
+  /* footer 手機版置中 */
   footer .container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .footer-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
 }
   </style>
 </head>
