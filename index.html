@@ -84,7 +84,6 @@
       --bark: #8C7561;
       --espresso: #3D2E1F;
       --forest: #4A5D4A;
-      --sage: #8FA eighteen;
       --sage: #8FA88F;
       --blush: #D4A89A;
       --gold: #B8965A;
@@ -103,6 +102,7 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -1043,6 +1043,22 @@
   padding: 5px 14px;
   margin: 0; /* 移除外邊距，確保外框底部即為元素邊界 */
 }
+
+    .btn-pricing-ghost {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 36px;
+      font-family: var(--font-body-zh);
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--bark);
+      border: 1px solid var(--clay);
+      transition: all 0.3s;
+    }
+    .btn-pricing-ghost:hover {
+      background: var(--espresso);
+      color: var(--cream);
+    }
 
     /* ===== Portfolio Gallery ===== */
     .portfolio {
@@ -2253,9 +2269,17 @@
   <div class="service-en">Combo Brows</div>
   <p>結合霧眉的柔和底色與飄眉的仿真毛流，兼具自然感與輪廓感。打造層次分明、立體又柔美的完美眉型。</p>
   <div class="service-footer">
-    </div>
+  </div>
 </div>
-  </section>
+
+      </div><!-- /.services-grid -->
+
+      <div style="display:flex;justify-content:center;margin-top:48px;">
+        <a href="pricing/" class="btn-pricing-ghost">查看完整服務價格</a>
+      </div>
+
+    </div><!-- /.container -->
+  </section><!-- /#services -->
 
   <!-- ===== Portfolio Gallery ===== -->
   <section class="portfolio" id="portfolio">
@@ -2531,7 +2555,7 @@
         LINE 預約諮詢
       </a>
     </div>
-
+    
   </div>
 </section>
 
