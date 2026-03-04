@@ -726,7 +726,147 @@
       font-weight: 300;
       margin: 0;
     }
+    /* ── Artist Section ── */
+.artist {
+  padding: 100px 0;
+  background: var(--cream);
+}
 
+.artist-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.artist-photo {
+  position: relative;
+}
+
+.artist-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+
+.artist-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.75rem;
+}
+
+.artist-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.artist-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--clay);
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--clay);
+  line-height: 1.6;
+}
+
+.artist-desc {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.9rem;
+  color: var(--espresso);
+  opacity: 0.8;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.artist-awards {
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+.artist-awards::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--clay), transparent);
+}
+
+.awards-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.award-category {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.85rem;
+  color: var(--espresso);
+  min-width: 80px;
+}
+
+.award-rank {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.15em 0.6em;
+  border-radius: 2px;
+}
+
+.award-rank.champion {
+  background: var(--gold);
+  color: #fff;
+}
+
+.award-rank.second {
+  background: var(--clay);
+  color: #fff;
+}
+
+.award-rank.third {
+  background: var(--sand);
+  color: var(--espresso);
+}
+
+/* Artist RWD */
+@media (max-width: 768px) {
+  .artist-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .artist-photo img {
+    aspect-ratio: 4 / 5;
+    object-position: center 15%;
+  }
+}
     /* ===== Services Section ===== */
     .services {
       padding: 100px 0;
@@ -1921,6 +2061,56 @@
       </div>
     </div>
   </section>
+  <!-- Artist Section -->
+    <section class="artist" id="artist">
+      <div class="section-divider"></div>
+      <div class="container">
+        <div class="artist-inner reveal">
+
+          <div class="artist-photo">
+            <img src="images/artist.png" alt="芸兒｜WOO Natural Beauty 紋繡師・TISA 國際美業菁英賽冠軍">
+          </div>
+
+          <div class="artist-content">
+            <div class="artist-tag">Artist</div>
+            <h2 class="artist-title">紋繡師｜芸兒</h2>
+            <p class="artist-quote">「你的眉毛，我可能比你更在乎。」</p>
+
+            <p class="artist-desc">
+              細節控出身。每一雙眉毛在正式操作前，都會反覆確認比例、色調與毛流方向，直到彼此都滿意為止。相信紋繡不是套模板，而是一場關於你的臉的深度對話。
+            </p>
+
+            <div class="artist-awards">
+              <p class="awards-label">2023–2025 TISA 國際美業菁英賽</p>
+              <div class="awards-list">
+                <div class="award-item">
+                  <span class="award-category">霧唇</span>
+                  <span class="award-rank champion">冠軍</span>
+                </div>
+                <div class="award-item">
+                  <span class="award-category">飄眉</span>
+                  <span class="award-rank second">亞軍</span>
+                </div>
+                <div class="award-item">
+                  <span class="award-category">男士飄眉</span>
+                  <span class="award-rank second">亞軍</span>
+                  <span class="award-rank third">季軍</span>
+                </div>
+                <div class="award-item">
+                  <span class="award-category">沙霧眼線</span>
+                  <span class="award-rank third">季軍</span>
+                </div>
+                <div class="award-item">
+                  <span class="award-category">霧眉</span>
+                  <span class="award-rank third">季軍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
   <!-- ===== Services ===== -->
   <section class="services" id="services">
