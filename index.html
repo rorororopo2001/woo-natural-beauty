@@ -620,9 +620,19 @@
       stroke: var(--gold);
     }
     .philosophy-item {
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(140, 117, 97, 0.15);
-    }
+  padding: 20px 0;
+  border: none;
+  position: relative;
+}
+.philosophy-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(140, 117, 97, 0.25), transparent);
+}
     .philosophy-item:last-child { border: none; }
     .philosophy-item h4 {
       font-family: var(--font-body-zh);
@@ -2404,6 +2414,8 @@
       </div>
     </div>
   </section>
+
+ <div class="section-divider"><span></span></div>
 
   <!-- ===== Footer ===== -->
   <footer>
