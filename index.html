@@ -307,7 +307,7 @@
       padding-left: 24px;
     }
     .nav-dropdown-menu li a::after { display: none; }
-        
+
     /* Mobile Nav Toggle */
     .nav-toggle {
       display: none;
@@ -427,6 +427,25 @@
       gap: 20px;
       align-items: center;
       flex-wrap: wrap;
+    }
+
+    .hero-guide-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-family: var(--font-body-zh);
+      font-size: 13px;
+      color: var(--bark);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-guide-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
     }
 
     .btn-primary {
@@ -647,7 +666,6 @@
       line-height: 1.8;
       font-weight: 300;
     }
-
 
     /* About Images Layout */
     .about-images {
@@ -975,7 +993,7 @@
   color: var(--bark);
   line-height: 1.9;
   font-weight: 300;
-  flex-grow: 1; 
+  flex-grow: 1;
   margin-bottom: 30px; /* 與底部對齊區塊保持間距 */
 }
 
@@ -1025,7 +1043,6 @@
   padding: 5px 14px;
   margin: 0; /* 移除外邊距，確保外框底部即為元素邊界 */
 }
-
 
     /* ===== Portfolio Gallery ===== */
     .portfolio {
@@ -1944,7 +1961,7 @@
 .btn-line-contact:hover {
   background: #2a1f15 !important;
 }
-    
+
   </style>
   <meta name="google-site-verification" content="1GGO8UAczK-5HrVliOcC6-yv2c_f0PcjbisWwLO3Xq8" />
   <link rel="sitemap" type="application/xml" href="/woo-natural-beauty/sitemap.xml">
@@ -2001,6 +2018,11 @@
           </a>
           <a href="#services" class="btn-ghost">瀏覽服務項目</a>
         </div>
+
+        <a href="./first-time-guide/" class="hero-guide-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+          第一次紋眉？先看這篇
+        </a>
       </div>
       <div class="hero-visual">
         <div class="hero-frame-border"></div>
@@ -2139,7 +2161,7 @@
     <span class="service-tag">型男必選</span>
     <a href="men-brow-guide/" class="service-more-link">男士紋眉指南 →</a>
   </div>
-</div>        
+</div>
 
 <div class="service-card reveal">
   <div class="service-number">02</div>
@@ -2164,7 +2186,6 @@
     </div>
 </div>
   </section>
-
 
   <!-- ===== Portfolio Gallery ===== -->
   <section class="portfolio" id="portfolio">
@@ -2339,13 +2360,11 @@
   <div class="pmu-item-price"><sup>$</sup>2,500 <small>/ 次</small></div>
 </div>
 
-      
  <div class="pmu-item reveal">
   <div class="pmu-item-name">專業修眉</div>
   <div class="pmu-item-en">Brow Shaping</div>
   <div class="pmu-item-price"><sup>$</sup>250</div>
 </div>
-
 
       <!-- Refill -->
       <div class="pmu-refill reveal">
