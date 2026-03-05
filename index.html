@@ -37,7 +37,6 @@
     "name": "Woo Natural Beauty",
     "description": "高雄新興區專業紋眉工作室，提供霧眉、飄眉、韓式半永久紋繡服務。",
     "url": "https://rorororopo2001.github.io/woo-natural-beauty/",
-    "telephone": "",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "中山橫路40號",
@@ -65,9 +64,45 @@
       "https://www.instagram.com/woo_natural.beauty/",
       "https://maps.app.goo.gl/8odib5ZrvHgjfsZaA",
       "https://line.me/R/ti/p/@670fmzsz"
-    ]
-  }
+    ],
+    "areaServed": ["高雄市新興區", "高雄市", "Kaohsiung"],
+    "hasMap": "https://maps.app.goo.gl/8odib5ZrvHgjfsZaA"
+  } 
   </script>
+
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "機器飄眉",
+    "alternateName": "Machine Microblading",
+    "description": "以精細的毛流線條模擬真實眉毛生長方向，打造仿若天生的立體眉型。適合眉毛稀疏、想要自然毛流感的族群。",
+    "provider": { "@type": "BeautySalon", "name": "Woo Natural Beauty" },
+    "areaServed": "高雄市新興區",
+    "offers": { "@type": "Offer", "price": "9500", "priceCurrency": "TWD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "機器掃霧眉",
+    "alternateName": "Misty Powder Brows",
+    "description": "以輕柔的霧化技法，打造如同眉粉暈染般的柔和效果。適合喜歡溫柔妝感、追求自然乾淨眉型的族群。",
+    "provider": { "@type": "BeautySalon", "name": "Woo Natural Beauty" },
+    "areaServed": "高雄市新興區",
+    "offers": { "@type": "Offer", "price": "8000", "priceCurrency": "TWD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "霧眉加飄眉組合眉",
+    "alternateName": "Combo Brows",
+    "description": "結合霧眉的柔和底色與飄眉的仿真毛流，打造層次分明、立體又柔美的完美眉型。",
+    "provider": { "@type": "BeautySalon", "name": "Woo Natural Beauty" },
+    "areaServed": "高雄市新興區"
+  }
+]
+</script>
 
   <!-- ===== Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -528,10 +563,10 @@
       opacity: 0.12;
     }
 
-    .hero-image-overlay {
+.hero-image-overlay {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
+      bottom: 20px;
+      right: 20px;
       width: 180px;
       padding: 28px;
       background: var(--warm-white);
@@ -1189,6 +1224,15 @@
     .process-step {
       text-align: center;
       padding: 0 24px;
+    }
+    .process-time {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin: 4px 0 8px;
+      opacity: 0.85;
     }
     .process-icon {
       width: 96px;
@@ -2367,6 +2411,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
           <h4>眉型設計</h4>
+          <div class="process-time">施作當日・約 30 分鐘</div>
           <p>根據五官比例與膚色，<br>量身設計最適合你的眉型</p>
         </div>
         <div class="process-step reveal">
@@ -2374,6 +2419,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </div>
           <h4>完美呈現</h4>
+          <div class="process-time">施作約 1.5–2.5 小時</div>
           <p>專業施作與術後照顧指導，<br>讓美麗自然又持久</p>
         </div>
       </div>
@@ -2593,7 +2639,7 @@
           <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </div>
         <div class="faq-answer">
-          <p>施作前會塗抹專業舒緩膏，大幅減輕不適感。大多數顧客反映過程中僅有輕微刺刺的感覺，甚至有些顧客會在過程中放鬆入睡。整體來說舒適度很高，請放心前來。</p>
+          <p>大多數顧客反映過程中僅有輕微刺刺的感覺，甚至有些顧客會在過程中放鬆入睡。整體來說舒適度很高，請放心前來。</p>
         </div>
       </div>
 
@@ -2702,7 +2748,7 @@
         "name": "紋眉會不會很痛？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "施作前會塗抹專業舒緩膏，大幅減輕不適感。大多數顧客反映過程中僅有輕微刺刺的感覺，整體舒適度很高。"
+          "text": "大多數顧客反映過程中僅有輕微刺刺的感覺，甚至整個過程都是放鬆休息的狀態，整體舒適度很高。"
         }
       },
       {
