@@ -107,7 +107,8 @@
   <!-- ===== Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+TC:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
 
   <style>
     /* ===== CSS Variables ===== */
@@ -2166,7 +2167,10 @@
       <div class="hero-visual">
         <div class="hero-frame-border"></div>
         <div class="hero-image-frame">
-          <img src="images/hero.jpg" alt="Woo Natural Beauty 紋眉師專業施作中 - 高雄紋眉工作室" style="width:100%;height:100%;object-fit:cover;object-position:center top;" loading="eager">
+          <picture>
+            <source srcset="images/hero.webp" type="image/webp">
+            <img src="images/hero.jpg" alt="Woo Natural Beauty 紋眉師專業施作中 - 高雄紋眉工作室" style="width:100%;height:100%;object-fit:cover;object-position:center top;" loading="eager" fetchpriority="high" width="768" height="1024">
+          </picture>
         </div>
         <div class="hero-image-overlay">
           <div class="stat-number">100%</div>
@@ -2217,14 +2221,23 @@
       <div class="about-visual reveal">
         <div class="about-images">
           <div class="about-img-main">
-            <img src="images/studio-env.jpg" alt="Woo Natural Beauty 工作室環境 - 高雄新興區紋眉工作室" loading="lazy">
+            <picture>
+              <source srcset="images/studio-env.webp" type="image/webp">
+              <img src="images/studio-env.jpg" alt="Woo Natural Beauty 工作室環境 - 高雄新興區紋眉工作室" loading="lazy" width="594" height="740">
+            </picture>
           </div>
           <div class="about-img-secondary">
             <div class="about-img-small">
-              <img src="images/work-studio.jpg" alt="Woo Natural Beauty 紋眉師眉型設計中" loading="lazy">
+              <picture>
+                <source srcset="images/work-studio.webp" type="image/webp">
+                <img src="images/work-studio.jpg" alt="Woo Natural Beauty 紋眉師眉型設計中" loading="lazy" width="600" height="800">
+              </picture>
             </div>
             <div class="about-img-small">
-              <img src="images/work-expo.jpg" alt="Woo Natural Beauty 紋繡師國際展會施作" loading="lazy">
+              <picture>
+                <source srcset="images/work-expo.webp" type="image/webp">
+                <img src="images/work-expo.jpg" alt="Woo Natural Beauty 紋繡師國際展會施作" loading="lazy" width="600" height="800">
+              </picture>
             </div>
           </div>
         </div>
@@ -2238,7 +2251,10 @@
         <div class="artist-inner reveal">
 
           <div class="artist-photo">
-            <img src="images/artist.png" alt="芸兒｜WOO Natural Beauty 紋繡師・TISA 國際美業菁英賽冠軍">
+            <picture>
+              <source srcset="images/artist.webp" type="image/webp">
+              <img src="images/artist.png" alt="芸兒｜WOO Natural Beauty 紋繡師・TISA 國際美業菁英賽冠軍" loading="lazy" width="857" height="1118">
+            </picture>
           </div>
 
           <div class="artist-content">
@@ -2344,7 +2360,10 @@
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item reveal">
-          <img src="images/portfolio-1.jpg" alt="男生紋眉前後對比 - Woo Natural Beauty 高雄紋眉作品" loading="lazy">
+          <picture>
+            <source srcset="images/portfolio-1.webp" type="image/webp">
+            <img src="images/portfolio-1.jpg" alt="男生紋眉前後對比 - Woo Natural Beauty 高雄紋眉作品" loading="lazy" width="600" height="747">
+          </picture>
           <div class="portfolio-overlay">
             <div class="portfolio-overlay-text">
               <h4>男士眉型設計</h4>
@@ -2353,7 +2372,10 @@
           </div>
         </div>
         <div class="portfolio-item reveal">
-          <img src="images/portfolio-2.jpg" alt="女生霧眉前後對比 - Woo Natural Beauty 高雄霧眉作品" loading="lazy">
+          <picture>
+            <source srcset="images/portfolio-2.webp" type="image/webp">
+            <img src="images/portfolio-2.jpg" alt="女生霧眉前後對比 - Woo Natural Beauty 高雄霧眉作品" loading="lazy" width="600" height="748">
+          </picture>
           <div class="portfolio-overlay">
             <div class="portfolio-overlay-text">
               <h4>柔和霧眉</h4>
@@ -2362,7 +2384,10 @@
           </div>
         </div>
         <div class="portfolio-item reveal">
-          <img src="images/portfolio-3.jpg" alt="男生機器紋眉前後對比 - Woo Natural Beauty 高雄紋眉作品" loading="lazy">
+          <picture>
+            <source srcset="images/portfolio-3.webp" type="image/webp">
+            <img src="images/portfolio-3.jpg" alt="男生機器紋眉前後對比 - Woo Natural Beauty 高雄紋眉作品" loading="lazy" width="595" height="745">
+          </picture>
           <div class="portfolio-overlay">
             <div class="portfolio-overlay-text">
               <h4>俐落男眉</h4>
