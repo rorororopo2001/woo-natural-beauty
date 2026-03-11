@@ -40,6 +40,50 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://woonaturalbeauty.com.tw/" },
+      { "@type": "ListItem", "position": 2, "name": "霧眉 vs 飄眉", "item": "https://woonaturalbeauty.com.tw/misty-vs-micro/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "霧眉和飄眉哪個比較自然？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "飄眉透過逐根仿真毛流，貼近天生眉毛，素顏感更強；霧眉呈現柔霧粉感、輪廓清晰，屬於清爽輕妝效果。兩者沒有哪個更好，差別在於你日常偏好的妝感。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "霧眉或飄眉做完，要怎麼保養？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "施作後約 7 至 10 天為修復期，需注意避免眉毛沾水、不以彩妝碰觸眉毛區域、讓結痂自然脫落。詳細的逐日護理步驟可參考：https://woonaturalbeauty.com.tw/brow-aftercare/"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "第一次做眉毛，霧眉和飄眉選哪個？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "兩種技法的修復期相近，差別主要在效果：霧眉適合日常偏好輪廓感或有輕妝習慣的人，飄眉適合想素顏也好看、追求自然毛流感的人。更多說明可以參考：https://woonaturalbeauty.com.tw/first-time-guide/"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -809,6 +853,47 @@ word-break: break-word;
   }
   .footer-links { flex-wrap: wrap; justify-content: center; }
 }
+
+    /* ===== FAQ ===== */
+    .faq-list { margin-top: 8px; }
+    .faq-item { border-bottom: 1px solid var(--sand); }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 20px;
+      padding: 24px 0;
+    }
+    .faq-question h3 {
+      font-family: var(--font-body-zh);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      color: var(--espresso);
+    }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .faq-toggle svg { width: 12px; height: 12px; stroke: var(--bark); transition: transform 0.3s; }
+    .faq-item.active .faq-toggle { background: var(--espresso); border-color: var(--espresso); }
+    .faq-item.active .faq-toggle svg { stroke: var(--cream); transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s var(--ease-out-expo), padding 0.5s;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; padding-bottom: 20px; }
+    .faq-answer p { font-size: 14px; color: var(--bark); line-height: 2; }
   </style>
 </head>
 
@@ -976,6 +1061,44 @@ word-break: break-word;
           </div>
         </section>
 
+        <!-- Section 6: FAQ -->
+        <section id="faq" class="reveal">
+          <div class="section-tag">FAQ</div>
+          <h2>常見問題</h2>
+
+          <div class="faq-list">
+            <div class="faq-item active">
+              <div class="faq-question">
+                <h3>霧眉和飄眉哪個比較自然？</h3>
+                <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer">
+                <p>飄眉以逐根仿真毛流見長，貼近天生眉毛，素顏感更強；霧眉呈現柔霧粉感、輪廓清晰，是清爽的輕妝效果。兩者沒有哪個更好，差別在於你日常偏好的感覺。</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>霧眉或飄眉做完，要怎麼保養？</h3>
+                <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer">
+                <p>施作後約 7 至 10 天為修復期，需注意避免眉毛沾水、不以彩妝碰觸眉毛區域、讓結痂自然脫落。詳細的逐日護理步驟可參考<a href="../brow-aftercare/" style="color:var(--gold);border-bottom:1px solid var(--gold);">紋眉後護理完整指南</a>。</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>第一次做眉毛，霧眉和飄眉選哪個？</h3>
+                <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer">
+                <p>兩種技法的修復期相近，差別主要在效果：霧眉適合日常偏好輪廓感或有輕妝習慣的人，飄眉適合想素顏也好看、追求自然毛流感的人。有更多疑問可以先看<a href="../first-time-guide/" style="color:var(--gold);border-bottom:1px solid var(--gold);">第一次紋眉前必看</a>，或直接預約諮詢讓我們依你的臉型和眉況給出建議。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- CTA -->
         <div class="article-cta reveal">
           <div class="cta-tag">Free Consultation</div>
@@ -1000,6 +1123,7 @@ word-break: break-word;
             <li><a href="#compare">4 個關鍵差異</a></li>
             <li><a href="#who">你適合哪一種？</a></li>
             <li><a href="#combo">霧眉＋飄眉組合眉</a></li>
+            <li><a href="#faq">常見問題</a></li>
           </ul>
         </div>
 
@@ -1079,6 +1203,16 @@ word-break: break-word;
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
     sections.forEach(s => tocObserver.observe(s));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
   </script>
 
 </body>
